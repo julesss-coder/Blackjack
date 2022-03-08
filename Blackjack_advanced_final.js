@@ -154,7 +154,7 @@ function playBlackjack() {
     } else if (playerPoints === 21) {
       alert(`Player has ${playerPoints} points!`);
     }
-    // Hier ein return statement anbringen, das erreicht wird, egal welche Bedingungen vorher erfüllt sind. Dann werden die playerPoints sicher zurückgegeben, und es ist auch viel übersichtlicher.
+
     return playerPoints;
   }
 
@@ -169,7 +169,6 @@ function playBlackjack() {
       getPlayerPoints();
     } else if (playerChoice === '2') {
       playerStatus = 'stand';
-      // EIN RETURN STATEMENT HIER BEWIRKT, DASS NACH getPlayerPoints() `playerPoints` undefined sind. Annahme: return gibt undefined zurück. in getPlayerPoints() wird getPlayerChoice() durch (in diesem Fall) ihren Rückgabewert undefined ersetzt. Und dadurch ist dann der Rückgabewert von getPlayerPoints auch undefined.
 
       alert(`Values in player's hand: ${playerHand}.`);
     }
@@ -279,39 +278,3 @@ playBlackjack();
 while (confirm('Would you like to start a new game?')) {
   playBlackjack();
 }
-
-//========================================================================================
-
-// /*
-// FRAGEN ZU SPIELREGELN:
-// Quelle: https://www.blackjack.org/blackjack/how-to-play/ 
-// Your goal in blackjack is to beat the dealer’s hand without going over 21. 
-// The winner of the round is whoever has the highest hand without going bust. 
-
-// // I assume that player and dealerBot each get their own card deck of 52 cards?
-// Traditional land-based casinos, as well as online blackjack casinos, will use between one and as many as eight decks per game. 
-// --> I use one deck
-
-// dealBet at start of game?
-
-// when you win, do you continue with the bet, or do you go from 0 and decide anew in each round?
-
-/*========================
-
-WAS ICH GELERNT HABE:
-
-- Es zahlt sich VOLL aus, vor dem Programmieren ein detailliertes Outline zu schreiben und zu tracen, statt "schon mal" mit dem Programmieren anzufangen. Nachdem ich das detaillierte Outline hatte, musste ich nur mehr programmieren. Es gab zwar einiges zu debuggen, aber nur Kleinigkeiten!!
-*/
-
-/*
-
-ERRORS
-Wenn ich bei Schlussfrage auf Abbrechen gehe, wird trotzdem weitergespielt.
-
-Zu viele Alerts. Werden teilweise wiederholt. Warum?
-- dealer hits
-- dealer stands werden wiederholt. wahrscheinlich liegts am call stack. -->MORGEN ERLEDIGEN
-
-URL: https://replit.com/@julessscoder/BitesizedLawngreenOptimization#script.js 
-
-*/
